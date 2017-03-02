@@ -1,0 +1,20 @@
+include  ../block/index
+include ../../node_modules/bemto.pug/bemto
+
+doctype html
+html
+	head
+		meta(charset="UTF-8")
+		meta(name="viewport", content="width=device-width, user-scalable=yes")
+		title Персональный сайт Елены Кузнецовой
+		link(rel="stylesheet" href="vendor/reset.css")
+		link(rel="stylesheet" href="css/main.css")
+	body
+		div.wrap
+			header.header
+				block header
+			main.main
+				block main
+			footer.footer
+				block footer
+			script(type="text/javascript" src="/vendor/jquery.min.js")

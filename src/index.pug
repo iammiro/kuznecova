@@ -1,0 +1,12 @@
+extends layouts/root
+
+block header
+	-headerTextLeft = "Персональный сайт Елены Кузнецовой"
+	-headerTextRight = "Бинарные опционы - Мой выбор свободы и счастья! И если пока ты ничего о них не знаешь, то самое время узнать!"
+	-classesBlock = ""
+	+b-header(headerTextLeft, headerTextRight, classesBlock)
+
+block main
+	+b-slider
+
+block footer
