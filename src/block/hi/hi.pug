@@ -1,0 +1,13 @@
+mixin b-hi (hiHeader, hiText, btnText, linkText)
+	+b.hiWrap
+		+b.wrap
+			+b.hiLeftBlock
+				img(src="img/hiPhoto.png")
+			+b.hiRightBlock
+				+e.hiHeader!= hiHeader
+				+e.HiText!= hiText
+				+b.hiFooter
+					+e._btn
+						button()!= btnText
+					+e._link
+						a(href="/")!= linkText

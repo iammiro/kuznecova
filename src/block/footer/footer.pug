@@ -1,9 +1,11 @@
 mixin b-footer(leftFooterText, rightFooterText)
-	+b.footerColumn
-		+e.footerText!=leftFooterText
-	+b.footerColumn
-		+e.socialsIcons
-			img(src="img/facebook-circle-color.png" alt="fb")
-			img(src="img/instagram-logo.png" alt="inst")
-			img(src="img/vk-social-logotype.png" alt="vk")
-	+b.footerColumn!=rightFooterText
+	+b.wrap
+		+b.footerWrap
+			+b.footerColumn
+				+e.footerText!=leftFooterText
+			+b.footerColumn
+				+e.socialsIcons
+					img(src="img/facebook-circle-color.png" alt="fb")
+					img(src="img/instagram-logo.png" alt="inst")
+					img(src="img/vk-social-logotype.png" alt="vk")
+			+b.footerColumn!=rightFooterText

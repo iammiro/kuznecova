@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <title>Demo</title>
+<link href='http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css' rel='stylesheet'/>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/app1.js"></script>
+</head>
+<body class="ng-scope" ng-app="optionTest">
+    <div class="ng-scope" id="test-option" ng-controller="viewportController">
+        <div id="chart-header">
+            <div class="logo"></div>
+
+            <div class="params">
+                <div class="asset">
+                    <i class="ng-binding">Актив</i>
+                    <span>EUR/USD</span>
+                </div>
+
+                <div class="balance">
+                    <i class="ng-binding">Баланс</i>
+                    <span class="ng-binding">${{chart.balance.toFixed(2)}}</span>
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <div class="chart-message" ng-class="{'showed':chart.messageTradeResult}">
+            <div class="dialog">
+                <div class="times" ng-click="chart.dismiss()">&times;</div>
+                <div class="title" translate="{{chart.messageHeader}}" translate-value-amount="{{chart.tradeResultAmount}}">$</div>
+
+                {{chart.messageTradeResult | translate}}
+
+                <div class="buttons" ng-if="chart.messageTradeResultSuccess">
+                    <a class="ok params-link" href="%7B%7BsiteLink%20-%20translate%7D%7D.html" target="_parent">Перейти на сайт</a>
+                    <div class="button" ng-click="chart.dismiss()">Закрыть</div>
+                </div>
+
+                <div class="buttons" ng-if="!chart.messageTradeResultSuccess">
+                    <div class="ok" ng-click="chart.dismiss()">Продолжить</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="chart-message" ng-class="{'showed':chart.message}">
+            <div class="dialog">
+                <div class="times" ng-click="chart.dismiss()">&times;</div>
+
+                <span translate="{{chart.message}}" translate-value-max="{{chart.maxBets}}"></span>
+
+                <div class="buttons">
+                    <div class="ok" ng-click="chart.dismiss()">ОК</div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+        <div id="scene"></div>
+
+        <div id="side-panel">
+            <a href="%7B%7BregisterLink%20-%20translate%7D%7D.html" class="big-button ng-binding" target="_parent">
+                Приступить
+                <strong class="ng-binding">к регистрации</strong>
+            </a>
+
+            <div class="block">
+                <div class="title ng-binding">Сумма</div>
+
+                <div class="input">
+                    <div class="amount">$</div>
+                    <input type="text" numbers-only maximum-value="1000" ng-model="chart.betAmount" ng-keydown="chart.setResult($event)" />
+                </div>
+            </div>
+
+            <div class="block">
+                <div class="title ng-binding">Прибыль</div>
+                <div class="profit ng-binding">${{chart.result.toFixed(2)}}</div>
+            </div>
+
+            <div class="await-buttons ng-binding ng-hide" ng-hide="!chart.buyClosed">
+                <i class="fa fa-clock-o"></i>
+                {{chart.expirationEndsSeconds}}
+            </div>
+
+            <div class="buy-buttons" ng-hide="chart.buyClosed">
+                <a href="m1.html#" class="operate-button call ng-binding" ng-click="chart.bet(1, $event)"><i class="fa fa-hand-o-up"></i>Вверх</a>
+                <a href="m1.html#" class="operate-button put ng-binding" ng-click="chart.bet(0, $event)"><i class="fa fa-hand-o-down"></i>Вниз</a>
+            </div>
+        </div>
+    </div>
+
+
+</body></html>

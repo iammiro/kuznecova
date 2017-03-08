@@ -26,6 +26,7 @@
     "gulp-filter": "^5.0.0",
     "gulp-imagemin": "^3.1.1",
     "gulp-minify": "0.0.15",
+    "gulp-coffee": "^2.3.3",
     "gulp-postcss": "^6.3.0",
     "gulp-pug": "^3.2.0",
     "gulp-sass": "^3.1.0",

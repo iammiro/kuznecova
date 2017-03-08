@@ -1,4 +1,14 @@
-mixin b-slider
+mixin b-slider(sliderCenterText, sliderBtnText)
 	+b.slider
-		+e.slider_item
-			img(src="img/1------.png" alt="slider item 1")
+		+b.sliderCenter
+			+e._sliderNav
+				img(src="img/left.png")
+				p.sliderCenterText!=sliderCenterText
+				img(src="img/right.png")
+			+e.sliderBtn
+				button()!= sliderBtnText
+		ul#slides
+			li.slide.showing#slide1
+			li.slide#slide2
+			li.slide#slide3
+			li.slide#slide4

@@ -1,0 +1,7 @@
+mixin b-video(videoH2)
+	+b.videoWrap
+		+b.wrap
+			+b.videoh2!=videoH2
+			video#my-video(class="video-js" controls preload="auto" width="950" height="" poster="video/poster.png" data-setup="{}")
+				source(src="http://internet-capital.ru/video/screencast.mp4" type='video/mp4')
+			script(src="http://vjs.zencdn.net/5.10.4/video.js")

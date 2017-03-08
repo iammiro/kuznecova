@@ -1,0 +1,26 @@
+mixin b-recommend(recommendH2, recommendH3_1, recommendH3_2, recommendH3_3, recommendH4, recommendText)
+	+b.recommendWrap
+		+b.wrap
+			+e.recommendH2!=recommendH2
+			+b.recommendH3Block
+				+b.recommendH3Item
+					+e.recommendH3ItemImage
+						img(src="img/")
+					+e.recommendH3!=recommendH3_1
+				+b.recommendH3Item
+					+e.recommendH3ItemImage
+						img(src="img/")
+					+e.recommendH3!=recommendH3_2
+				+b.recommendH3Item
+					+e.recommendH3ItemImage
+						img(src="img/")
+					+e.recommendH3!=recommendH3_3
+			+b.recommendTextBlock
+				+b.recommendTextBlockTextColumn
+					+e.recommendH4!=recommendH4
+					+e.recommendText!=recommendText
+				+b.recommendTextBlockImgColumn
+					+e.recommendTextBlockImgColumnItem
+						img(src="img/fgtr3ARWF.png")
+					+e.recommendTextBlockImgColumnItem
+						img(src="img/fgtr3ARWF.png")

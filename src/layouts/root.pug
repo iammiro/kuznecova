@@ -7,14 +7,16 @@ html
 		meta(charset="UTF-8")
 		meta(name="viewport", content="width=device-width, user-scalable=yes")
 		title Персональный сайт Елены Кузнецовой
-		link(rel="stylesheet" href="vendor/reset.css")
+		link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css")
 		link(rel="stylesheet" href="css/main.css")
+		link(href="http://vjs.zencdn.net/5.10.4/video-js.css" rel="stylesheet")
+		script(src="http://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js")
+		script(src="vendor/bootstrap/js/bootstrap.min.js")
 	body
-		div.wrap
-			header.header
-				block header
-			main.main
-				block main
-			footer.footer
-				block footer
-			script(type="text/javascript" src="/vendor/jquery.min.js")
+		header.header
+			block header
+		main.main
+			block main
+		footer.footer
+			block footer
+		script(type="text/javascript" src="js/slider/slider.js")

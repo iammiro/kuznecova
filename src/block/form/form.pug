@@ -1,0 +1,16 @@
+mixin b-form(formH3, buttonText)
+	+b.formWrap
+		+b.wrap
+			+e.formH3!=formH3
+			form(action="")
+				+e.inputBlock
+					input(type="email" placeholder="Email")
+				+e.inputBlock
+					input(type="text" placeholder="Пароль")
+				+e.inputBlock.radioBlock
+					input(type="radio" name="currency" value="rub" placeholder="Рубли")
+					input(type="radio" name="currency" value="usd" placeholder="Доллары")
+				+e.inputBlock
+					label #[input(type="checkbox")] Я принимаю условия соглашения
+				+e.inputBlock
+					button(type="submit")!=buttonText

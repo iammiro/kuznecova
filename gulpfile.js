@@ -6,6 +6,7 @@ const pug = require('gulp-pug');
 const sass = require('gulp-sass');
 var stylus = require('gulp-stylus');
 var concat = require('gulp-concat');
+var coffee = require('gulp-coffee');
 const cleanCSS = require('gulp-clean-css');
 const imagemin = require('gulp-imagemin');
 var Filter = require('gulp-filter');
@@ -71,6 +72,12 @@ gulp.task('index-page', function buildHTML() {
         .pipe(pug({}))
         .pipe(gulp.dest('dist/'));
 });
+
+// gulp.task('coffee', function() {
+//     gulp.src('src/block/**/*.coffee')
+//         .pipe(coffee({bare: true}))
+//         .pipe(gulp.dest('build/js/'));
+// });
 
 gulp.task('pug:watch', function () {
     gulp.watch('src/pug/*', ['html'])

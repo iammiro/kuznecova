@@ -1,0 +1,113 @@
+body{line-height:1.5;background-color:#fff;margin:0 auto;color:#25323a;font-size:14px;height: 100%;}div,input{box-sizing:border-box}input{line-height:1.2;padding:0}html{height:100%;font-family:sans-serif;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;font-size:62.5%;-webkit-tap-highlight-color:transparent}
+
+.big-button, .operate-button {
+	text-transform: uppercase;
+	text-decoration: none !important;
+}
+#test-option{position:relative;width:100%;height:100%}
+#chart-header{position:absolute;top:0;width:100%;height:44px;left:0;background-color:#1f2429;color:#fff;z-index:3;text-align:left}
+#chart-header .params{position:absolute;top:0;right:178px;width:290px;text-align:right}
+#chart-header .asset,#chart-header .balance{display:inline-block;position:relative;height:44px;margin-left:40px}
+#chart-header .asset span,#chart-header .balance span{font-size:18px;display:block;top:15px;position:relative}
+#chart-header .asset i,#chart-header .balance i{display:block;font-style:normal;font-size:10px;position:absolute;top:4px}
+.big-button{color:#fff!important;font-size:11px;display:block;text-align:center;transition:.15s;line-height:1.35em;padding:6px 0 7px;cursor:pointer;border-radius:2px;box-shadow:0 1px 2px rgba(0,0,0,.25);text-shadow:0 1px 1px rgba(0,0,0,.5);background:linear-gradient(to right,#27a6ea 0,#27c5dd 100%);margin:0 5px 15px}
+.big-button strong{display:block;white-space:nowrap}
+.big-button:hover{background:linear-gradient(to right,#1d9ce0 0,#1dbbd3 100%)}
+.big-button:active{transform:translateY(.5px)}
+#chart-header .logo{height:50px;width:200px;position:absolute;left:15px;top:0;background:url("sigma-europe-logo.png") 0 49% no-repeat;-webkit-background-size:145px;background-size:145px}
+#scene{width:80%;height:374px;position:absolute;left:0;top:44px;z-index:5;background-color:#20282f}
+#side-panel{position:absolute;top:0;width:20%;height:100%;right:0;margin-left:174px;background-color:#2c3843;z-index:3;padding-top:8px;border-left:1px solid #1f2429}
+#side-panel .block{text-align:left;padding:0 15px 15px}
+#side-panel .block .title{color:#aaaeb3}
+#side-panel .block .profit{font-size:20px;color:#00a8ed}
+#side-panel .block .input{font-size:20px;background-color:#2c323a;border:1px solid #1f2429;border-radius:5px;position:relative;margin-top:6px}
+#side-panel .block .input input{border:none;background:0 0;position:absolute;top:0;left:0;width:100%;font-size:20px;color:#fff;height:40px;line-height:40px;padding:0 5px 0 20px}
+#side-panel .block .amount{color:#fff;padding:0 9px;height:40px;line-height:40px}
+.chart-message{width:80%;height:374px;position:absolute;left:0;top:44px;z-index:8;background-color:RGBA(23,31,36,.75);transition:.4s;opacity:0;text-align:center}
+.chart-message .dialog{background-color:RGBA(23,31,36,.85);width:320px;position:absolute;top:50%;left:50%;border:1px solid #00a8ed;margin-left:-160px;transform:scale(0) translateY(-50%);opacity:0;font-size:16px;color:#fff;padding:13px 20px 24px;border-radius:5px;box-shadow:0 2px 3px rgba(0,0,0,.25);-webkit-transition:all .4s cubic-bezier(.175,.885,.32,1);-webkit-transition:all .4s cubic-bezier(.175,.885,.32,1.275);-moz-transition:all .4s cubic-bezier(.175,.885,.32,1.275);-o-transition:all .4s cubic-bezier(.175,.885,.32,1.275);transition:all .4s cubic-bezier(.175,.885,.32,1.275)}
+.chart-message.showed .dialog{transform:scale(1) translateY(-50%);opacity:1}
+.chart-message .dialog .times{color:#fff;position:absolute;font-size:20px;cursor:pointer;top:0;right:10px;z-index:6;opacity:.7}
+.chart-message .dialog .button,.chart-message .dialog .ok{height:30px;line-height:30px;width:130px;border-radius:3px;color:#fff;font-size:14px;box-shadow:0 2px 3px rgba(0,0,0,.25);display:inline-block;transition:.15s;cursor:pointer}
+.chart-message .dialog .times:hover{opacity:1}
+.chart-message .dialog .ok{background-color:#00a8ed;margin:14px 5px 0}
+.chart-message .dialog .button{background-color:#aaaeb3;margin:14px auto 0}
+.chart-message .dialog .ok:hover{background-color:#009fdf}
+.chart-message .dialog .title{color:#009fdf;font-size:20px;margin-bottom:5px}
+.chart-message.showed{opacity:1;z-index:10}
+.await-buttons{height:103px;border:2px solid #00a8ed;margin:0 15px 15px;border-radius:5px;color:#00a8ed;font-size:32px;padding-top:10px;text-align:center}
+.await-buttons i{display:block;font-size:38px}
+.operate-button{height:46px;line-height:46px;color:#fff!important;font-size:16px;display:block;text-align:left;transition:.15s;padding-left:8px;cursor:pointer;border-radius:2px;box-shadow:0 1px 2px rgba(0,0,0,.25);text-shadow:0 1px 1px rgba(0,0,0,.2);margin:0 5px 15px}
+.operate-button:active{transform:translateY(.5px)}
+.operate-button i{margin-right:5px}
+.operate-button.call{background:#49c574}
+.operate-button.call:hover{background:#359858}
+.operate-button.put{background:#eb5153}
+.operate-button.put:hover{background:#c34040}
+
+.stm_gmap_wrapper .alert {
+	margin-bottom: 0px;
+}
+.stm_gmap_wrapper .alert strong {
+	color: #ff0000;
+}
+.fix-form-margin {
+  margin-top: 41px;
+}
+.hide-tabs ul.vc_tta-tabs-list {
+  display: none !important;
+}
+.overlay_3111.stm_contacts_widget ul {
+  margin-bottom: 10px !important;
+}
+.overlay_3111.stm_contacts_widget ul li .text a {
+  color: #002e5b;
+  font-size: 13px;
+}
+.overlay_3111.stm_contacts_widget ul li .text {
+  color: #222222;
+  font-size: 18px;
+}
+.overlay_3111.stm_contacts_widget ul li {
+  margin-bottom: 0;
+}
+.footer_widgets .widget .widget_title {
+  font-size: 16px;
+}
+#footer .footer_widgets .widget.widget_recent_entries#recent-posts-4 ul li, #footer .footer_widgets .col-md-3 .widget.widget_nav_menu ul li,
+#footer .footer_widgets .col-md-3 .widget.widget_text p {
+  height: 40px;
+  line-height: 20px;
+  margin-bottom: 15px;
+}
+#footer .footer_widgets .col-md-3 #recent-posts-4.widget ul li a {
+  line-height: 20px;
+  margin-bottom: 0;
+}
+
+.vc_custom_1477930310350 h4:after,
+.vc_custom_1478613444205 h4:after,
+.vc_custom_1478613444205 h3:after,
+.vc_custom_1478613444205 h5:after
+{
+  display: none;
+}
+
+body.header_style_2 #header .header_top .top_nav .header_socials a .fa.fa-facebook:before{content:"\f082"}
+body.header_style_2 #header .header_top .top_nav .header_socials a {
+  font-size: 29px;
+  line-height: 29px;
+  position: absolute;
+  right: -25px;
+  top: 40px;
+}
+@media (max-width: 440px) {
+  #scene {
+    width: 70%;
+  }
+  #side-panel {
+    width: 30%;
+  }
+  #chart-header .logo {
+    display: none;
+  }
+}
