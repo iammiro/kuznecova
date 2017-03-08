@@ -8,4 +8,5 @@ mixin b-footer(leftFooterText, rightFooterText)
 					img(src="img/facebook-circle-color.png" alt="fb")
 					img(src="img/instagram-logo.png" alt="inst")
 					img(src="img/vk-social-logotype.png" alt="vk")
-			+b.footerColumn!=rightFooterText
+			+b.footerColumn
+				+e.footerText!=rightFooterText
