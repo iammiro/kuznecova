@@ -4,12 +4,12 @@ mixin b-form(formH3, buttonText)
 			+e.formH3!=formH3
 			form(action="")
 				+e.inputBlock
-					input(type="email" placeholder="Email")
+					label #[input(type="email" placeholder="Email")]
 				+e.inputBlock
-					input(type="text" placeholder="Пароль")
+					label #[input(type="text" placeholder="Пароль")]
 				+e.inputBlock.radioBlock
-					input(type="radio" name="currency" value="rub" placeholder="Рубли")
-					input(type="radio" name="currency" value="usd" placeholder="Доллары")
+					label #[input#radio1.radio(type="radio" name="currency" value="rub" placeholder="Рубли")]
+					label #[input#radio2.radio(type="radio" name="currency" value="usd" placeholder="Доллары")]
 				+e.inputBlock
 					label #[input(type="checkbox")] Я принимаю условия соглашения
 				+e.inputBlock

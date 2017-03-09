@@ -29,6 +29,7 @@
   color #ffffff
 
 .recommendH3Item__recommendH3ItemImage
+
   background #ffffff
   height 371px
   width 365px
@@ -38,6 +39,7 @@
   padding 10px
 
 .recommendH3Item__recommendH3
+  cursor pointer
   margin 20px 0
   color #ffffff
   font-family GothaProMed
@@ -49,17 +51,11 @@
   align-items center
   text-align center
 
-.recommendTextBlockTextColumn, .recommendTextBlockImgColumn
-  padding 20px
-  display flex
-  flex-direction column
-  justify-content flex-start
-
 .recommendTextBlock
   font-family GothaProMed
   font-size 14px
   display flex
-  flex-direction row
+  flex-direction column
   justify-content flex-start
   align-items flex-start
   margin-bottom 30px
@@ -67,9 +63,54 @@
   background #ffffff
   padding 20px
 
-.recommendTextBlockTextColumn__recommendH4
-  padding 20px 0
-  font-size 32px
+#howToBegin, #whatIsBinary, #comments
+  display none
+  flex-direction column
+  justify-content flex-start
+  align-items flex-start
 
-.recommendTextBlockImgColumn img
-  padding 30px 0
+#whatIsBinary img
+  max-width 800px
+
+#comments
+  li
+    list-style-type none
+
+  a
+    color #333333
+    font-size .8em
+    font-weight 600
+    padding 5px
+
+  .comment-wrap
+    display flex
+    flex-direction row
+    width 900px
+    padding 10px
+    margin 10px
+    background-color #ffffff
+    border-bottom 1px groove
+
+  .text
+    padding 10px
+    font-size .8em
+
+  .name
+    color #365899
+    font-weight 600
+    font-size 17px
+
+  .img-wrap
+  .number
+    font-weight 700
+    font-size 14px
+    padding 5px
+
+  .avatar
+    width 95px
+    margin-right 10px
+
+  .date
+    font-weight 400
+    font-size 14px
+    padding 5px

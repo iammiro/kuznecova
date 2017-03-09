@@ -6,7 +6,7 @@ mixin b-slider(sliderCenterText, sliderBtnText)
 				p.sliderCenterText!=sliderCenterText
 				img(src="img/right.png")
 			+e.sliderBtn
-				button()!= sliderBtnText
+				button.toggle-block!= sliderBtnText
 		ul#slides
 			li.slide.showing#slide1
 			li.slide#slide2

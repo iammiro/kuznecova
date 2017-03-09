@@ -8,6 +8,6 @@ mixin b-hi (hiHeader, hiText, btnText, linkText)
 				+e.HiText!= hiText
 				+b.hiFooter
 					+e._btn
-						button()!= btnText
+						button().toggle-block!= btnText
 					+e._link
 						a(href="/")!= linkText
