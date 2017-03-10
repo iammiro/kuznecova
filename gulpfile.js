@@ -12,7 +12,6 @@ const imagemin = require('gulp-imagemin');
 var Filter = require('gulp-filter');
 const minify = require('gulp-minify');
 const browserSync = require('browser-sync').create();
-const reload = browserSync.reload;
 
 const processors = [
     autoprefixer({
@@ -21,70 +20,59 @@ const processors = [
     nested
 ];
 
-gulp.task('serve', ['pug'], function () {
+// Static server
+gulp.task('serve', ['stylus', 'pug', 'coffee'], function() {
     browserSync.init({
         server: {
-            baseDir: "./"
+            baseDir: "./build/"
         }
     });
-    gulp.watch('*.jade', ['pug']);
-    gulp.watch('*.html').on('change', reload);
+
+    gulp.watch('src/**/*.*', ['stylus']);
+    gulp.watch('src/**/*.*', ['pug']);
+    gulp.watch('src/coffee/*.*', ['coffee']);
+    gulp.watch('build/**.*').on('change', browserSync.reload);
 });
 
+//Сжатие и перемещение изображений
 gulp.task('compress-images', function () {
     gulp.src('src/assets/img/*')
         .pipe(imagemin())
         .pipe(gulp.dest('build/img'))
 });
 
-gulp.task('compress-js', function () {
-    gulp.src('src/js/*.js')
-        .pipe(minify({
-            ext: {
-                src: '-debug.js',
-                min: '.js'
-            },
-            exclude: ['tasks'],
-            ignoreFiles: ['.combo.js', '-min.js']
-        }))
-        .pipe(gulp.dest('dist/js'))
-});
+// Компиляция файлов Stylus
+// gulp.task('stylus', function(){
+//     return gulp.src('src/assets/*.*')
+//         .pipe(stylus())
+//         .pipe(gulp.dest('build/css/'))
+//         .pipe(browserSync.stream());
+// });
 
-gulp.task('styl', function () {
+gulp.task('stylus', function () {
     const f = Filter(['src/block/**/*.styl'], {restore: true});
-    return gulp.src('src/block/**/*.styl')
+    return gulp.src('src/**/*.styl')
         .pipe(f)
         .pipe(stylus())
         .pipe(concat('main.css'))
-        .pipe(gulp.dest('build/css'));
+        .pipe(gulp.dest('build/css'))
+        .pipe(browserSync.stream());
 });
 
-gulp.task('pug', function buildHTML() {
-    return gulp
-        .src('src/*.pug')
-        .pipe(pug({}))
-        .pipe(gulp.dest('build/'));
+// Компиляция файлов PUG
+gulp.task('pug', function(){
+    return gulp.src('src/index.pug')
+        .pipe(pug())
+        .pipe(gulp.dest('build/'))
+        .pipe(browserSync.stream());
 });
 
-gulp.task('index-page', function buildHTML() {
-    return gulp
-        .src('index.pug')
-        .pipe(pug({}))
-        .pipe(gulp.dest('dist/'));
+// Компиляция файлов Coffee
+gulp.task('coffee', function(){
+    return gulp.src('src/coffee/*.*')
+        .pipe(coffee())
+        .pipe(gulp.dest('build/js/'))
+        .pipe(browserSync.stream());
 });
 
-// gulp.task('coffee', function() {
-//     gulp.src('src/block/**/*.coffee')
-//         .pipe(coffee({bare: true}))
-//         .pipe(gulp.dest('build/js/'));
-// });
-
-gulp.task('pug:watch', function () {
-    gulp.watch('src/pug/*', ['html'])
-});
-
-gulp.task('scss:watch', function () {
-    gulp.watch('src/scss/*', ['scss']);
-});
-
-gulp.task('default', ['styl', 'pug']);
+gulp.task('default', ['serve']);
