@@ -36,7 +36,7 @@ gulp.task('serve', ['stylus', 'pug', 'coffee'], function() {
 
 //Сжатие и перемещение изображений
 gulp.task('compress-images', function () {
-    gulp.src('src/assets/img/*')
+    gulp.src('src/assets/img/**/*')
         .pipe(imagemin())
         .pipe(gulp.dest('build/img'))
 });

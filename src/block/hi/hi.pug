@@ -1,5 +1,5 @@
 mixin b-hi (hiHeader, hiText, btnText, linkText)
-	+b.hiWrap
+	+b.hiWrap#hiBlock
 		+b.wrap
 			+b.hiLeftBlock
 				img(src="img/hiPhoto.png")
@@ -10,4 +10,4 @@ mixin b-hi (hiHeader, hiText, btnText, linkText)
 					+e._btn
 						button().toggle-block!= btnText
 					+e._link
-						a(href="/")!= linkText
+						a(href="#toForm")!= linkText
