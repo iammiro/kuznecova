@@ -2,9 +2,12 @@ mixin b-slider(sliderCenterText, sliderBtnText)
 	+b.slider
 		+b.sliderCenter
 			+e._sliderNav
-				img(src="img/left.png")
+				button.controls#previous
+					img(src="img/left.png")
 				p.sliderCenterText!=sliderCenterText
-				img(src="img/right.png")
+				button.controls#next
+					img(src="img/right.png")
+				button.controls#pause Pause
 			+e.sliderBtn
 				button.toggle-block!= sliderBtnText
 		ul#slides

@@ -7,10 +7,18 @@ mixin b-form(formH3, buttonText)
 					label #[input(type="email" placeholder="Email")]
 				+e.inputBlock
 					label #[input(type="text" placeholder="Пароль")]
-				+e.inputBlock.radioBlock
-					label #[input#radio1.radio(type="radio" name="currency" value="rub" placeholder="Рубли")]
-					label #[input#radio2.radio(type="radio" name="currency" value="usd" placeholder="Доллары")]
 				+e.inputBlock
+					+b.radio-block
+						+e.radio-item
+							input(type="radio" id="f-option" name="selector" value="rub")
+							label(for="f-option") Рубли
+							div.check
+						+e.radio-item
+							input(type="radio" id="s-option" name="selector" value="usd")
+							label(for="s-option") Доллары
+							div.check
+								div.inside
+				+e.inputBlock#checkbox
 					label #[input(type="checkbox")] Я принимаю условия соглашения
 				+e.inputBlock
 					button(type="submit")!=buttonText
