@@ -4,21 +4,14 @@ const autoprefixer = require('autoprefixer');
 const nested = require('postcss-nested');
 const pug = require('gulp-pug');
 const sass = require('gulp-sass');
-var stylus = require('gulp-stylus');
-var concat = require('gulp-concat');
-var coffee = require('gulp-coffee');
+const stylus = require('gulp-stylus');
+const concat = require('gulp-concat');
+const coffee = require('gulp-coffee');
 const cleanCSS = require('gulp-clean-css');
 const imagemin = require('gulp-imagemin');
-var Filter = require('gulp-filter');
+const Filter = require('gulp-filter');
 const minify = require('gulp-minify');
 const browserSync = require('browser-sync').create();
-
-const processors = [
-    autoprefixer({
-        browsers: ['last 6 versions']
-    }),
-    nested
-];
 
 // Static server
 gulp.task('serve', ['stylus', 'pug', 'coffee'], function() {
@@ -41,23 +34,26 @@ gulp.task('compress-images', function () {
         .pipe(gulp.dest('build/img'))
 });
 
-// Компиляция файлов Stylus
-// gulp.task('stylus', function(){
-//     return gulp.src('src/assets/*.*')
-//         .pipe(stylus())
-//         .pipe(gulp.dest('build/css/'))
-//         .pipe(browserSync.stream());
-// });
+//Сжатие js
+gulp.task('compress', function() {
+    gulp.src('build/js/*.js')
+        .pipe(minify())
+        .pipe(gulp.dest('build'))
+});
 
+//Компиляция, минифиикация и префиксы файлов stylus
 gulp.task('stylus', function () {
     const f = Filter(['src/block/**/*.styl'], {restore: true});
     return gulp.src('src/**/*.styl')
         .pipe(f)
         .pipe(stylus())
         .pipe(concat('main.css'))
+        .pipe(postcss([ autoprefixer() ]))
+        .pipe(cleanCSS({compatibility: 'ie8'}))
         .pipe(gulp.dest('build/css'))
         .pipe(browserSync.stream());
 });
+
 
 // Компиляция файлов PUG
 gulp.task('pug', function(){
