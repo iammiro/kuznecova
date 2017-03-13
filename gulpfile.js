@@ -14,7 +14,7 @@ const minify = require('gulp-minify');
 const browserSync = require('browser-sync').create();
 
 // Static server
-gulp.task('serve', ['stylus', 'pug', 'coffee', ['js']], function() {
+gulp.task('serve', ['stylus', 'pug', 'coffee', 'js'], function() {
     browserSync.init({
         server: {
             baseDir: "./build/"

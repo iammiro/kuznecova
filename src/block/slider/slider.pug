@@ -1,15 +1,18 @@
-mixin b-slider(sliderCenterText, sliderBtnText)
+mixin b-slider(sliderCenterText1, sliderCenterText2, sliderCenterText3, sliderCenterText4, sliderBtnText)
 	+b.slider#sliderBlock
 		+b.sliderCenter
 			+e._sliderNav
 				input(type="image" src="img/left.png").controls#previous
-				p.sliderCenterText!=sliderCenterText
 				input(type="image" src="img/right.png").controls#next
 				button.controls#pause Pause
 			+e.sliderBtn
 				a(href="#hiBlock")!= sliderBtnText
 		ul#slides
 			li.slide.showing#slide1
+				p.sliderCenterText.sliderCenter!=sliderCenterText1
 			li.slide#slide2
+				p.sliderCenterText.sliderCenter!=sliderCenterText2
 			li.slide#slide3
+				p.sliderCenterText.sliderCenter!=sliderCenterText3
 			li.slide#slide4
+				p.sliderCenterText.sliderCenter!=sliderCenterText4
