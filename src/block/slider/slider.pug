@@ -1,15 +1,13 @@
 mixin b-slider(sliderCenterText, sliderBtnText)
-	+b.slider
+	+b.slider#sliderBlock
 		+b.sliderCenter
 			+e._sliderNav
-				button.controls#previous
-					img(src="img/left.png")
+				input(type="image" src="img/left.png").controls#previous
 				p.sliderCenterText!=sliderCenterText
-				button.controls#next
-					img(src="img/right.png")
+				input(type="image" src="img/right.png").controls#next
 				button.controls#pause Pause
 			+e.sliderBtn
-				button.toggle-block!= sliderBtnText
+				a(href="#hiBlock")!= sliderBtnText
 		ul#slides
 			li.slide.showing#slide1
 			li.slide#slide2

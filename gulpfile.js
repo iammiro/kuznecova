@@ -14,7 +14,7 @@ const minify = require('gulp-minify');
 const browserSync = require('browser-sync').create();
 
 // Static server
-gulp.task('serve', ['stylus', 'pug', 'coffee'], function() {
+gulp.task('serve', ['stylus', 'pug', 'coffee', ['js']], function() {
     browserSync.init({
         server: {
             baseDir: "./build/"
@@ -35,10 +35,10 @@ gulp.task('compress-images', function () {
 });
 
 //Сжатие js
-gulp.task('compress', function() {
-    gulp.src('build/js/*.js')
+gulp.task('js', function() {
+    gulp.src('src/js/*.js')
         .pipe(minify())
-        .pipe(gulp.dest('build'))
+        .pipe(gulp.dest('build/js/'))
 });
 
 //Компиляция, минифиикация и префиксы файлов stylus
