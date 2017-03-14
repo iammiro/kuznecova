@@ -8,6 +8,7 @@ const stylus = require('gulp-stylus');
 const concat = require('gulp-concat');
 const coffee = require('gulp-coffee');
 const cleanCSS = require('gulp-clean-css');
+const concatCss = require('gulp-concat-css');
 const imagemin = require('gulp-imagemin');
 const Filter = require('gulp-filter');
 const minify = require('gulp-minify');
@@ -37,8 +38,25 @@ gulp.task('compress-images', function () {
 //Сжатие js
 gulp.task('js', function() {
     gulp.src('src/js/*.js')
+        .pipe(concat('main.js'))
         .pipe(minify())
         .pipe(gulp.dest('build/js/'))
+});
+
+//Конкатенация js библиотек
+gulp.task('scripts', function() {
+    return gulp.src('src/assets/vendor/lib/*.js')
+        .pipe(concat('all.js'))
+        .pipe(minify())
+        .pipe(gulp.dest('build/js/'));
+});
+
+//Конкатенация CSS сторонних вендоров
+gulp.task('vendor-css', function () {
+    return gulp.src('src/assets/vendor/css/*.css')
+        .pipe(concatCss("bundle.css"))
+        .pipe(cleanCSS({compatibility: 'ie8'}))
+        .pipe(gulp.dest('build/css/'));
 });
 
 //Компиляция, минифиикация и префиксы файлов stylus
