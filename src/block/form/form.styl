@@ -1,3 +1,37 @@
+//bootstrap classes for form
+
+.has-error .checkbox, .has-error .checkbox-inline, .has-error .control-label, .has-error .help-block, .has-error .radio, .has-error .radio-inline, .has-error.checkbox label, .has-error.checkbox-inline label, .has-error.radio label, .has-error.radio-inline label
+  color: #a94442
+
+.has-error .form-control
+  border-color #a94442
+  -webkit-box-shadow inset 0 1px 1px rgba(0, 0, 0, .075)
+  box-shadow inset 0 1px 1px rgba(0, 0, 0, .075)
+
+.has-error .form-control:focus
+  border-color #843534
+  -webkit-box-shadow inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 6px #ce8483
+  box-shadow inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 6px #ce8483
+
+.has-error .input-group-addon
+  color #a94442
+  background-color #f2dede
+  border-color #a94442
+
+.has-error .form-control-feedback
+  color #a94442
+
+.help-block
+  display block
+  margin-top 5px
+  margin-bottom 10px
+  color #737373
+
+.hidden
+  display none !important
+
+//end bootstrap classes for form
+
 .formWrap
   background-image url("../img/blockFormBack.png")
   background-position top
@@ -48,11 +82,13 @@ input, input:placeholder-shown
   justify-content center
   align-items center
 
-.wrap__inputBlock input[type="text"], input[type="email"]
+.wrap__inputBlock input[type="text"], input[type="password"]
   width 613px
   height 47px
   background-color #ffffff
   color #1f2429
+
+//  custom radio buttons
 
 .radio-block
   margin 20px 0
@@ -63,7 +99,7 @@ input, input:placeholder-shown
   justify-content center
   align-items center
 
-.radio-block__radio-item
+.radio-block .radio-item
   color black
   display block
   position relative
@@ -72,11 +108,11 @@ input, input:placeholder-shown
   height 47px
   border-bottom 1px solid #111111
 
-.radio-block__radio-item input[type=radio]
+.radio-block .radio-item input[type=radio]
   position absolute
   visibility hidden
 
-.radio-block__radio-item label
+.radio-block .radio-item label
   display block
   position relative
   font-weight 300
@@ -88,7 +124,7 @@ input, input:placeholder-shown
   cursor pointer
   -webkit-transition all 0.25s linear
 
-.radio-block__radio-item .check
+.radio-block .radio-item .check
   background-color white
   display block
   position absolute
@@ -111,6 +147,8 @@ input[type=radio]:checked ~ .check::before
 
 input[type=radio]:checked ~ label
   color black
+
+//  end custom radio buttons
 
 #checkbox
   display flex
