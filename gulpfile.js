@@ -2,6 +2,9 @@ const gulp = require('gulp');
 const postcss = require('gulp-postcss');
 const autoprefixer = require('autoprefixer');
 const nested = require('postcss-nested');
+const imagemin = require('gulp-imagemin');
+const Filter = require('gulp-filter');
+const minify = require('gulp-minify');
 const pug = require('gulp-pug');
 const sass = require('gulp-sass');
 const stylus = require('gulp-stylus');
@@ -9,9 +12,6 @@ const concat = require('gulp-concat');
 const coffee = require('gulp-coffee');
 const cleanCSS = require('gulp-clean-css');
 const concatCss = require('gulp-concat-css');
-const imagemin = require('gulp-imagemin');
-const Filter = require('gulp-filter');
-const minify = require('gulp-minify');
 const browserSync = require('browser-sync').create();
 
 // Static server
